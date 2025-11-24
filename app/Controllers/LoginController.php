@@ -12,7 +12,20 @@ class LoginController extends BaseController
         $data = [
             'name' => "Hello World"
         ];
-        return view('template/header_template').view('login_view', $data).view('template/footer_template');
-    
+        return view('template/header_template') . view('login_view', $data) . view('template/footer_template');
+    }
+
+    public function showLogin()
+    {
+
+        return view('template/header_template') . view('login_view') . view('template/footer_template');
+    }
+
+    public function loginValid()
+    {
+        $data = [
+            'name' => $this->request->getPost()
+        ];
+        return view('template/header_template') . view('login_view', $data) . view('template/footer_template');
     }
 }

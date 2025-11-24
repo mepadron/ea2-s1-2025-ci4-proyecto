@@ -8,3 +8,5 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/avatar', 'Home::avatar');
 $routes->get('/login', 'LoginController::index');
+$routes->get('/loginForm', 'LoginController::showLogin');
+$routes->post('/login/loginValid', 'LoginController::loginValid');

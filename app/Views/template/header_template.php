@@ -260,6 +260,7 @@
                     <button id="menuToggle">&#9776;</button>
                 </li>
                 <li class="menu-item hidden"><a href="/">Home</a></li>
+                <li class="menu-item hidden"><a href="/loginForm">Login</a></li>
                 <li class="menu-item hidden"><a href="/avatar">Docs</a>
                 </li>
                 <li class="menu-item hidden"><a href="https://forum.codeigniter.com/">Community</a></li>
