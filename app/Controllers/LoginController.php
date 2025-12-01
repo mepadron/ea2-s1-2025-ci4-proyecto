@@ -23,9 +23,22 @@ class LoginController extends BaseController
 
     public function loginValid()
     {
-        $data = [
-            'name' => $this->request->getPost()
-        ];
-        return view('template/header_template') . view('login_view', $data) . view('template/footer_template');
+
+        $loginForm = $this->request->getPost(['login', 'clave']);
+
+        $loginBD = "mp";
+        $clave = "1234";
+
+        if ($loginForm['login'] == $loginBD && $loginForm['clave'] == $clave) {
+            $data = [
+                'name' => "<h1>Acceso concedido</h1>"
+            ];
+            return view('template/header_template') . view('login_view', $data) . view('template/footer_template');
+        } else {
+            $data = [
+                'name' => "<h1>Acceso denegado</h1>"
+            ];
+            return view('template/header_template') . view('login_view', $data) . view('template/footer_template');
+        }
     }
 }

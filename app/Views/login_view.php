@@ -1,22 +1,24 @@
-<form action="/login/loginValid" method="post">
-    <?= csrf_field() ?>
+<div style="text-align: center; margin-top: 50px;">
+    <form action="/login/loginValid" method="post">
+        <?= csrf_field() ?>
 
-    <label for="login">Login</label>
-    <input type="input" name="login">
-    <br>
+        <label for="login">Login</label>
+        <input type="input" name="login">
+        <br>
 
-    <label for="pass">Clave</label>
-    <input type="password" name="clave">
+        <label for="pass">Clave</label>
+        <input type="password" name="clave">
 
-    <br>
+        <br>
 
-    <input type="submit" name="submit" value="Entrar al sistema">
-</form>
+        <input type="submit" name="submit" value="Entrar al sistema">
+    </form>
 
-<?php
+    <?php
 
-if (isset($name)) {
-    print_r($name);
-}
+    if (isset($name)) {
+        print_r($name);
+    }
 
-?>
+    ?>
+</div>
