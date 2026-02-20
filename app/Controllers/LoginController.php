@@ -4,11 +4,14 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
+use App\Models\ServiceModel;
 
 class LoginController extends BaseController
 {
     public function index()
     {
+
+
         $data = [
             'name' => "Hello World"
         ];
@@ -17,6 +20,8 @@ class LoginController extends BaseController
 
     public function showLogin()
     {
+        $serviceModel = new ServiceModel();
+        $serviceModel->getAllServices();
 
         return view('template/header_template') . view('login_view') . view('template/footer_template');
     }

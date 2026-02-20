@@ -2,11 +2,15 @@
 
 namespace App\Controllers;
 
+use App\Models\ServiceModel;
+
 class Home extends BaseController
 {
     public function index(): string
     {
-        return view('template/header_template').view('welcome_message').view('template/footer_template');
+        $serviceModel = new ServiceModel();
+        $serviceModel->getServiceById();
+        return view('template/header_template') . view('welcome_message') . view('template/footer_template');
     }
 
     public function avatar(): string
@@ -17,6 +21,6 @@ class Home extends BaseController
             'age'  => 21,
             'avatar' => 'https://picsum.photos/id/1/200/300'
         ];
-        return view('template/header_template').view('welcome_message', $data).view('template/footer_template');
+        return view('template/header_template') . view('welcome_message', $data) . view('template/footer_template');
     }
 }
